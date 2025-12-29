@@ -19,7 +19,9 @@ using namespace std;
 
 const int threadSize = 8;
 vector<thread> threadPool;
+
 queue<int> clientQueue;
+
 mutex mtx;  // this lock when thread access data
 condition_variable cv;
 void stopThreadPool() {
