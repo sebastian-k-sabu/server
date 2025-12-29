@@ -50,7 +50,7 @@ void handleClinet(){
             {
                 
                 char buffer[1024] = {0};
-                recv(clientSocket,buffer,sizeof(buffer),0);
+                recv(clientSocket,buffer,sizeof(buffer),0); 
                 cout << buffer<<endl;
                 string sentData = processData(buffer);
                 //removeSpace(buffer);
