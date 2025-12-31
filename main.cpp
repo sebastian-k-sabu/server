@@ -5,6 +5,7 @@
 #include <arpa/inet.h>
 #include <atomic>
 #include <errno.h>
+#include <string>
 
 #include "logger.hpp"
 #include "multiProcessHandler.hpp"
@@ -19,6 +20,14 @@ enum class ServerState : int {
     SHUTTING_DOWN,
     STOPPED
 };
+//-----------------ServerConfig-------------------
+struct ServerConfig {
+    int port = 8080;
+    int serverStartProcesses = 2;
+    int maxServerProcesses = 20; 
+};
+
+
 
 std::atomic<ServerState> server_state{ServerState::STOPPED};
 
